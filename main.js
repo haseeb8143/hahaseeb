@@ -37,10 +37,11 @@ renderer.render(scene, camera);
 let object;
 
 const loader = new GLTFLoader();
+const objurl = 'https://hahaseeb.s3.us-east-2.amazonaws.com/my-tv.glb'
 
 //Load the file
 loader.load(
-  `my-tv.glb`,
+  objurl,
   function (gltf) {
     
     object = gltf.scene;
@@ -106,8 +107,9 @@ scene.add(light, spot, spot2, spot3);
 
 
 // Background
+const imgurl = 'https://hahaseeb.s3.us-east-2.amazonaws.com/web-bg.jpg'
 
-const Texture = new THREE.TextureLoader().load('/web-bg.jpg');
+const Texture = new THREE.TextureLoader().load(imgurl);
 
 scene.background = Texture
 
