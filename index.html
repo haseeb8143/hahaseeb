@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    
+    <title>Testing</title>
+  </head>
+  <body >
+     
+    <main class="animate-pg-1">
+      <h1 class="loading-text">Loading...</h1>
+    </main>
+    <canvas id="bg"></canvas>
+    <main class="main">
+
+      <nav class="nav">
+        <div class="nav-text"><a class="nav-links" href="#about">About</a></div>
+        <div class="nav-text"><a class="nav-links exp" href="#exp">Experience</a></div>
+        <div class="nav-text"><a class="nav-links" href="#contact">Contact</a></div>
+      </nav>
+
+      <div class="block" id="start">
+        <div class="tv-buttons">
+
+            <button value="about" class="tv-button tv-btn-list"></button>
+
+            <button value="about" class="tv-button2 tv-btn-list"></button>
+
+        </div>
+      </div>
+
+      <div class="block" id="about">
+        <div class="con-page">
+
+          <h1 class="page-text">About me</h1>
+          <div class="card-1">
+            
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="block" id="exp">
+        <div class="con-page">
+
+          <h1 class="page-text">
+            Experience
+          </h1>
+          <div class="card-1">
+  
+            
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block" id="contact">
+        <div class="con-page">
+
+          <h1 class="page-text">Contact</h1>
+          <div class="card-1">
+            <div class="contact-block">
+  
+  
+              <div class="form">
+  
+                <form 
+                method="POST"
+                class="form"
+
+                id="myForm"
+                onsubmit="Validate(event)">
+                  <label for="Name">Name</label>
+                  <input type="text" name="Name" id="name" maxlength="20">
+                  <label for="Email">Email</label>
+                  <input type="email" name="Email" id="email" maxlength="40">
+                  <label for="Message">Say Something</label>
+                  <textarea name="Message" id="message" cols="30" rows="5" maxlength="300"></textarea>
+
+                  <button type="submit" id="subbtn" class="submit">Send! Send! Send!</button>
+
+                  <p id="alert"></p>
+                </form>
+              </div>
+  
+              <div class="contact">
+                <h3>Number</h3>
+                <p>123-456-9876</p>
+                <h3>Email</h3>
+                <p>ok@ok.com</p>
+                <h3>Location</h3>
+                <p>Ottawa lol</p>
+  
+              </div>
+  
+            </div>
+              
+            </div>
+
+
+        </div>
+        
+      </div>
+
+
+
+      <div class="block">
+        <!-- <div class="card-1"> -->
+          <a class="back-button" href="#start">
+            <img class="back-arrow" src="img/orange-back-arrow.png" alt="Go to start">
+          </a>
+        </div>
+      <!-- </div> -->
+    </main>
+
+    <script type="module" src="/validation.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/vanilla.js"></script>
+    <script>
+
+    //   window.addEventListener('beforeunload', () => {
+    // document.body.style.scrollBehavior = 'auto';
+    // window.scrollTo(0, 0);
+    //     });
+
+
+
+
+  // madarchod validation
+
+
+
+
+  function Validate(e) {
+
+e.preventDefault();
+
+console.log('running')
+// Perform your form validation here
+var name = document.getElementById("name");
+var email = document.getElementById("email");
+var message = document.getElementById("message");
+
+// Example validation: Check if the name, email, and message are not empty
+if (name.value.trim() === "") {
+  name.classList.add("error")
+}
+if(email.value.trim() === "") {
+    email.classList.add("error")
+}
+if ( message.value.trim() === "") {
+    message.classList.add("error")
+}
+else {
+    name.classList.remove("error")
+    email.classList.remove("error")
+    message.classList.remove("error")
+  // If validation passes, you can submit the form
+  this.submit();
+}
+}
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
