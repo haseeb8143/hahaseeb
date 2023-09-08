@@ -10,6 +10,8 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
+  alpha: true,
+  powerPreference: 'low-power',
   canvas: document.querySelector('#bg'),
 });
 renderer.shadowMap.enabled = true;
@@ -51,25 +53,16 @@ loader.load(
     
     object.scale.set(.17, .17, .17); 
 
-    gltf.scene.traverse((n) => {
-      if (n.isMesh) {
-        n.castShadow = true; 
-          n.receiveShadow = true;
-          if(n.material.map) n.material.map.anisotropy = 16; 
-          
-      }
-    });
-
-    scene.add(gltf.scene);
+    scene.add(object);
   },
   function (xhr) {
     //While it is loading, log the progress
     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
     var loading = xhr.loaded / xhr.total * 100
-    // if (loading == 100) {
-    //   gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
-    //   // gsap.to(".animate-pg-1", { zIndex: -120})
-    // }
+    if (loading == 100) {
+      gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
+      // gsap.to(".animate-pg-1", { zIndex: -120})
+    }
   },
   function (error) {
     //If there is an error, log it
@@ -79,8 +72,7 @@ loader.load(
   
   );
 
-  
-  //const rendere = new THREE.WebGLRenderer({ alpha: true }); //Alpha: true allows for the transparent background
+
   renderer.setSize(window.innerWidth, window.innerHeight);
   
 
@@ -111,27 +103,7 @@ scene.add(light, spot, spot2, spot3);
 
 
 
-//stars
 
-
-
-
-function addStar() {
-  const geometry = new THREE.SphereGeometry(0.25, 32, 32);
-  const material = new THREE.MeshStandardMaterial({ color: 0x79ffd7 });
-  const star = new THREE.Mesh(geometry, material);
-  star.receiveShadow = true
-  star.castShadow = true
-
-  const [x, y, z] = Array(3)
-    .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(100));
-
-  star.position.set(x, y, z);
-  scene.add(star);
-}
-
-//Array(500).fill().forEach(addStar);
 
 // Background
 
@@ -155,9 +127,7 @@ scene.background = Texture
 
 
 function moveCamera() {
-  // const t = document.querySelector(".main").getBoundingClientRect().left;
   const t = document.querySelector(".main").scrollLeft;
-  const tvBtnBox = document.querySelector('.tv-buttons');
   if (t <= 900) {
     
       camera.position.z = t * 0.003;
@@ -165,12 +135,7 @@ function moveCamera() {
       camera.position.y = t * 0.0007;
 
   }
-  if (t <= 1) {
-    tvBtnBox.classList.add("hidden")
-  }
-  else {
-    tvBtnBox.classList.remove("hidden")
-  }
+  
 
 }
 
