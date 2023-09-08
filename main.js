@@ -66,10 +66,10 @@ loader.load(
     //While it is loading, log the progress
     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
     var loading = xhr.loaded / xhr.total * 100
-    if (loading == 100) {
-      gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
-      // gsap.to(".animate-pg-1", { zIndex: -120})
-    }
+    // if (loading == 100) {
+    //   gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
+    //   // gsap.to(".animate-pg-1", { zIndex: -120})
+    // }
   },
   function (error) {
     //If there is an error, log it
