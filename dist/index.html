@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
     
     <title>Testing</title>
-    <script type="module" crossorigin src="/hahaseeb/assets/index.fdb84f41.js"></script>
-    <link rel="stylesheet" href="/hahaseeb/assets/index.5cde6cf5.css">
+    <script type="module" crossorigin src="/assets/index.557a5176.js"></script>
+    <link rel="stylesheet" href="/assets/index.57e398a5.css">
   </head>
   <body >
      
@@ -25,43 +25,102 @@
         <div class="nav-text"><a class="nav-links" href="#contact">Contact</a></div>
       </nav>
 
-      <div class="block" id="start">
-        <div class="tv-buttons">
-
-            <button value="about" class="tv-button tv-btn-list"></button>
-
-            <button value="about" class="tv-button2 tv-btn-list"></button>
-
-        </div>
-      </div>
+      <div class="block" id="start"></div>
 
       <div class="block" id="about">
-        <div class="con-page">
 
           <h1 class="page-text">About me</h1>
           <div class="card-1">
+            <div class="aboutme-box">
+              <div class="about-me">
+                <h1 class="aboutme-head">Hi, im Haseeb!</h1>
+                <p class="aboutme-text">I'm a tech enthusiast who's venturing into the world of web development.
+                </p>
+                
+                  <p class="aboutme-text">
+                    Art has always been my sanctuary—a realm where I can let my creativity run wild. Whether it's through painting, sketching, or exploring digital art.
+                  </p>
+                  
+                  <p class="aboutme-text">
+                    On the professional front, I'm on a mission to become a proficient web developer. I'm committed to sharpening my coding skills, tinkering with various programming languages, and diving into frameworks. My ultimate goal is to craft user-friendly, visually captivating websites that leave a lasting impact.
+                  </p>
+                <div>
+                  <a href="https://github.com/haseeb8143" class="aboutme-link"> <box-icon type='logo' name='github' color='#ffc166'></box-icon>  Github</a>
+                  
+                  <a href="https://www.linkedin.com/in/haseebiqbaldev/" class="aboutme-link"> <box-icon type='logo' name='linkedin-square' color='#ffc166'></box-icon> LinkedIn</a>
+                </div>
+              </div>
+         
+                <img class="self-pic" src="/assets/Webpfp.e1e6b2fc.jpg" alt="Haseeb's pic">
+
+
+            </div>
+
             
-            
+          
           </div>
-        </div>
       </div>
 
       <div class="block" id="exp">
-        <div class="con-page">
+        <!-- <div class="con-page"> -->
 
           <h1 class="page-text">
             Experience
           </h1>
           <div class="card-1">
+            <div class="exp-box">
+              <div class="Coding">
+                <box-icon name='code' color='#ffc166' ></box-icon>
+                <h1 class="exp-head">Coding
+                </h1>
+                <p class="exp-text">Lanaguages spoken</p>
+                <div class="programs">
+                  <div>
+
+                    <p> <box-icon name='html5' type='logo' color='#ffc166' ></box-icon> HTML</p>
+                    <p> <box-icon name='css3' type='logo' color='#ffc166' ></box-icon> CSS</p>
+                    <p> <box-icon name='javascript' type='logo' color='#ffc166' ></box-icon> JavaScript</p>
+                    <p> <box-icon type='logo' name='python' color='#ffc166'></box-icon> Python</p>
+                    <p> <box-icon type='logo' name='php' color='#ffc166'></box-icon> PHP</p>
+                    <p> <img class="csharp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADLUlEQVR4nO2aS2sUQRDHRyO+Ew8aERQPHkQvepNc9CSinlTcgyhKkukajQTxEyTGU/QgGvEDeBDJRaMgSIJTPVkl4FsDehIxUTyI8Ukwav7SnVWymdndeezu7IwpKJiF6e79Tf+7uru6DWPW/hODbTaBxXVIGtOunm2zyUiKwTbXQNJlME1CElzOdBODx9YZtWq4fWgJpOiEpHFPgHyYH5B0Hv20zKgVAzrmgq3DkPS+JIDLxQewOAG7Y168ELbYDqanwQFc/gJMmRgAaIPWenSAmd4Pp3VT5QH6jy/X2pbiZwUgcuNH/NbBwm5bVX6A4cx8rWVJnyoG4PZvOnjcO7koOgCMOUq7YHpVRQDM8BEwkQoq4SCktQUssjECIN/FfbC5NWgvnC04ocXpTJNgccZnTwgrWmPiDZh6YNNOHd3URHmrfQEGrNWQtAOSuiHpdUQoszQI03DIrh9VDaA3U1eyjd5MHWzrQASgZ35AJkJU3IdsS72vLp/eVralHlJcCSGxidKVB5fShdAR5d+YFOeCtmuUGaQvCkQejKQ7MYGI0UJywt2jK8HiNCQ9zk1sXyHFIzB1wWluzHt3kNaCxdWgUdIoH4jV6lnesfaD6UuRsmNgcy8e0GIwdYDpe5gBb5QFRIVYj+iUg/DzZX+B6V2hP4cCvysAQj3eciraE76/MqoHIna5yk2NiUgApaz8II653lWOxZPkgdhtS93lVGQKL6t4pJV1h92o4yMeEMdDWlNzRsKkxV6DnbqSCHLRVc5pbgSLz8mSlqQRr1wUmPblkgcJmRClilym8CyvYIolKVh8hEN7amOJIvXs/rbgotGmFZB0CkwPdVhWEW3quVOllGps0UhqBXwjBct4+tszPZE3VjrpV25pcYitrkqfDrU3BIYYam/QsqrMVlc8DzP4dBRSiTQfmXX1DqR5UG8HKpZ8sE0RsvLp2ZRLYGs3uHWjWpfBPrJQHwCpFJHOmYUGQLFNnUevUHfNJugkdfuCqOmUqaRtgSBSlcRO1bFC6g56qnb0xmIAg9ZmI7GHoSxexnIYmrrj6VRdGEjdFY7Sl2roWqIu1cyaEc3+AJKNn+PR6XKHAAAAAElFTkSuQmCC" alt="c# logo"> C#</p>
+                    <p> <box-icon type='logo' name='java' color='#ffc166'></box-icon> Java</p>
+                  </div>
+                  <div>
+                    <p><box-icon type='solid' name='data' color='#ffc166'></box-icon> SQL</p>
+                  </div>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="design">
+                <box-icon name='palette' type='solid' color='#ffc166' ></box-icon>
+                <h1 class="exp-head">
+                  Design
+                </h1>
+                <p class="exp-text">Softwares used</p>
+                <div class="programs">
+                  <div>
+
+                    <p> <box-icon type='logo' name='adobe' color='#ffc166'></box-icon> Adobe Illustrator</p>
+                    <p> <box-icon type='logo' name='adobe' color='#ffc166'></box-icon> Adobe Photoshop</p>
+                    <p> <box-icon type='logo' name='figma' color='#ffc166'></box-icon> Figma</p>
+                    <p> <box-icon type='logo' name='blender' color='#ffc166'></box-icon> Blender</p>
+                  </div>
+                </div>
+              </div>
+              
+              
+            </div>
   
             
           </div>
 
-        </div>
+        <!-- </div> -->
       </div>
 
       <div class="block" id="contact">
-        <div class="con-page">
+        <!-- <div class="con-page"> -->
 
           <h1 class="page-text">Contact</h1>
           <div class="card-1">
@@ -110,7 +169,7 @@
             </div>
 
 
-        </div>
+        <!-- </div> -->
         
       </div>
 
@@ -119,7 +178,7 @@
       <div class="block">
         <!-- <div class="card-1"> -->
           <a class="back-button" href="#start">
-            <img class="back-arrow" src="/hahaseeb/assets/orange-back-arrow.bfa319e4.png" alt="Go to start">
+            <img class="back-arrow" src="/assets/orange-back-arrow.bfa319e4.png" alt="Go to start">
           </a>
         </div>
       <!-- </div> -->
