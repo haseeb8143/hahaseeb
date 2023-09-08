@@ -261,6 +261,17 @@ textarea{
 }
 
 
+.contact{
+  text-align: left;
+}
+
+.contact h4 {
+  font-size: medium;
+}
+.contact p{
+  font-size: 18px;
+}
+
 /* BACK BUTTON */
 .back-button{
   background-color: rgba(104, 104, 104, 0.15);  
