@@ -40,7 +40,7 @@ const loader = new GLTFLoader();
 
 //Load the file
 loader.load(
-  `models/my-tv-test-final-2.glb`,
+  `my-tv-test-final-2.glb`,
   function (gltf) {
     
     object = gltf.scene;
@@ -107,7 +107,7 @@ scene.add(light, spot, spot2, spot3);
 
 // Background
 
-const Texture = new THREE.TextureLoader().load('img/web-bg.jpg');
+const Texture = new THREE.TextureLoader().load('/web-bg.jpg');
 
 scene.background = Texture
 

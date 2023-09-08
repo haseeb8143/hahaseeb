@@ -141,49 +141,6 @@ body, .container {
 } 
 /* box-shadow: 0 4px 8px 0 rgba(29, 255, 206, 0.2), 0 6px 20px 0 rgba(28, 83, 96, 0.19); */
 
-/* TV BUTTONS */
-.tv-buttons{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 10vh;
-  transform: translateX(18vw) translateY(-21.3vh);
-  /* display: none; */
-  /* opacity: 0; */
-
-}
-.tv-button{
-  width: 30px; height: 30px;
-  border-radius: 20px;
-  border: none;
-  background-color: transparent;
-  transition: box-shadow 0.2s ease-in-out;
-
-  
-}
-.tv-button2{
-  width: 30px; height: 30px;
-  border-radius: 20px;
-  border: none;
-  background-color: transparent;
-  transition: box-shadow 0.2s ease-in-out;
-
-}
-
-.tv-button:hover{
-  box-shadow: 0 4px 20px 10px #FFC166;
-  cursor: pointer;
-}
-
-.tv-button2:hover{
-  box-shadow: 0 4px 20px 10px #FFC166;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
-}
-
 
 /* FORM */
 .page-text{
