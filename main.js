@@ -1,4 +1,4 @@
-import './style.css';
+//import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
@@ -40,7 +40,7 @@ const loader = new GLTFLoader();
 
 //Load the file
 loader.load(
-  `my-tv-test-final-2.glb`,
+  `my-tv.glb`,
   function (gltf) {
     
     object = gltf.scene;

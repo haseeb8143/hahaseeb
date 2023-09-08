@@ -1,4 +1,4 @@
-import './style.css';
+
 import HorizontalScroll from '@oberon-amsterdam/horizontal';
 
 
