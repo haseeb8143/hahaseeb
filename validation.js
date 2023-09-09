@@ -7,6 +7,7 @@
     
         console.log('running')
         // Perform your form validation here
+        document.getElementById("alert").textContent = ""
         var name = document.getElementById("name");
         var email = document.getElementById("email");
         var message = document.getElementById("message");
