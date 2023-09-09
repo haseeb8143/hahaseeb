@@ -88,18 +88,11 @@ const spot3 = new THREE.SpotLight(0xffc166, 4.5, 100 ) //top
 
 const spot2 = new THREE.SpotLight(0xffc166, 0.5, 100 ) //other side lol
 
-light.shadow.bias = -0.00009;
-light.shadow.mapSize.width = 1024*4;
-light.shadow.mapSize.height = 1024*4;
-light.castShadow = true; // Enable shadow casting
 
 light.position.set(7, 0, 9);
 spot.position.set(0, 30, 50)
 spot3.position.set(0, 10, -5)
 spot2.position.set(-5, 3, -5)
-
-
-scene.add(light, spot, spot2, spot3);
 
 
 
@@ -169,6 +162,44 @@ moveCamera();
 
 anim();
 
+
+
+// SCREENSIZE
+
+function toggleObjectsVisibility(isLargeScreen) {
+  if (isLargeScreen) {
+    scene.add(object, light, spot, spot2, spot3); // Show objects and lights
+  } else {
+    scene.remove(object, light, spot, spot2, spot3); // Hide objects and lights
+  }
+}
+
+function handleResize() {
+  if (window.innerWidth >= 768) {
+    // Other resize handling code
+
+    toggleObjectsVisibility(true); // Show objects and lights
+  } else {
+    // Other resize handling code
+
+    toggleObjectsVisibility(false); // Hide objects and lights
+  }
+}
+
+
+let resizeTimeout;
+
+function debounceResize() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    // Handle the resize event here
+    handleResize();
+  }, 200); // Adjust the debounce delay as needed
+}
+
+window.addEventListener('resize', debounceResize);
+
+handleResize()
 
 
 /////////////// EXTRA JS
