@@ -130,8 +130,8 @@ body, .container {
   flex-direction: column;
   background-color: rgba(104, 104, 104, 0.15);  
  backdrop-filter: blur(8px);
-  width: 90%;
-  height: 80%;
+  width: 1200px;
+  height: 550px;
   border:solid white 0.5px;
   border-radius: 10px;
 }
