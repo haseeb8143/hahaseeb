@@ -33,7 +33,7 @@
         else {
           message.classList.remove("error")
         }
-        if (name.value.trim() !== "" & email.value.trim() !== "" & email.value.trim() !== "") {
+        if (name.value.trim() !== "" & email.value.trim() !== "" & emailPattern.test(email.value.trim()) & email.value.trim() !== "") {
           // If validation passes, you can submit the form
           // If validation passes, make an AJAX request
           console.log("step 1")
