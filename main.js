@@ -34,44 +34,46 @@ renderer.render(scene, camera);
 
 
 
-let object;
+// let object;
 
-const loader = new GLTFLoader();
-const objurl = 'https://hahaseeb.s3.us-east-2.amazonaws.com/my-tv.glb'
+// const loader = new GLTFLoader();
+// const objurl = 'https://hahaseeb.s3.us-east-2.amazonaws.com/my-tv.glb'
 
-//Load the file
-loader.load(
-  objurl,
-  function (gltf) {
+// //Load the file
+// loader.load(
+//   objurl,
+//   function (gltf) {
     
-    object = gltf.scene;
+//     object = gltf.scene;
 
-    object.position.z = -0.5;
-    object.position.x = 0;
-    object.position.y = 0;
-    object.rotation.y = 174.35
+//     object.position.z = -0.5;
+//     object.position.x = 0;
+//     object.position.y = 0;
+//     object.rotation.y = 174.35
 
     
-    object.scale.set(.17, .17, .17); 
+//     object.scale.set(.17, .17, .17); 
 
-    scene.add(object);
-  },
-  function (xhr) {
-    //While it is loading, log the progress
-    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-    var loading = xhr.loaded / xhr.total * 100
-    if (loading == 100) {
-      gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
-      // gsap.to(".animate-pg-1", { zIndex: -120})
-    }
-  },
-  function (error) {
-    //If there is an error, log it
-    console.error(error);
-  },
+//     scene.add(object);
 
-  
-  );
+//     //handleResize();
+//   },
+//   function (xhr) {
+//     //While it is loading, log the progress
+//     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+//     var loading = xhr.loaded / xhr.total * 100
+//     if (loading == 100) {
+//       gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
+//       // gsap.to(".animate-pg-1", { zIndex: -120})
+//     }
+//   },
+//   function (error) {
+//     //If there is an error, log it
+//     console.error(error);
+//   },
+
+  ////////////////////////////////////////////
+//   );
 
 
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -166,16 +168,68 @@ anim();
 
 // SCREENSIZE
 
+var object;
+// var objectLoaded = false;
+
+//Load the file
+function loadObject() {
+  return new Promise((resolve, reject) => {
+    const loader = new GLTFLoader();
+    const objurl = 'https://hahaseeb.s3.us-east-2.amazonaws.com/my-tv.glb'
+loader.load(
+  objurl,
+  function (gltf) {
+    
+    object = gltf.scene;
+
+    object.position.z = -0.5;
+    object.position.x = 0;
+    object.position.y = 0;
+    object.rotation.y = 174.35
+
+    
+    object.scale.set(.17, .17, .17); 
+
+    scene.add(object);
+    // objectLoaded = true
+    resolve();
+    //handleResize();
+  },
+  function (xhr) {
+    //While it is loading, log the progress
+    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    var loading = xhr.loaded / xhr.total * 100
+    if (loading == 100) {
+      gsap.to(".animate-pg-1", { y: "-100vh" , duration: 1, delay: 1, ease: "power1.inOut" })
+      // gsap.to(".animate-pg-1", { zIndex: -120})
+    }
+  },
+  function (error) {
+    //If there is an error, log it
+    // console.error(error);
+    reject(error);
+  }
+  );
+});
+}
+
+
+
+
+
 function toggleObjectsVisibility(isLargeScreen) {
   if (isLargeScreen) {
-    scene.add(object, light, spot, spot2, spot3); // Show objects and lights
+    console.log(object)
+    scene.add(object ,light, spot, spot2, spot3); // Show objects and lights
   } else {
+
     scene.remove(object, light, spot, spot2, spot3); // Hide objects and lights
   }
 }
 
 function handleResize() {
-  if (window.innerWidth >= 768) {
+  
+  if (window.innerWidth >= 550) {
     // Other resize handling code
 
     toggleObjectsVisibility(true); // Show objects and lights
@@ -199,7 +253,24 @@ function debounceResize() {
 
 window.addEventListener('resize', debounceResize);
 
-handleResize()
+let objectLoaded = false;
+
+loadObject()
+  .then(() => {
+    objectLoaded = true;
+    console.log("Object has been loaded");
+    handleResize();
+  })
+  .catch((error) => {
+    console.error("Error loading object:", error);
+  });
+
+// if (objectLoaded){
+
+//   console.log("object has been loaded")
+//   handleResize()
+// }
+
 
 
 /////////////// EXTRA JS
