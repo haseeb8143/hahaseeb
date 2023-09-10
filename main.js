@@ -221,9 +221,11 @@ function toggleObjectsVisibility(isLargeScreen) {
   if (isLargeScreen) {
     console.log(object)
     scene.add(object ,light, spot, spot2, spot3); // Show objects and lights
+    scene.background = Texture
   } else {
 
     scene.remove(object, light, spot, spot2, spot3); // Hide objects and lights
+    scene.background = null;
   }
 }
 
