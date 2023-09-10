@@ -395,8 +395,8 @@ ul li a{
   body{
     background-image: url('web-bg.jpg');
     background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-repeat: no-repeat; */
     }
 
 
