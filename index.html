@@ -18,31 +18,70 @@
     <main class="main">
 
       <nav class="nav">
-        <div class="nav-text"><a class="nav-links" href="#about">About</a></div>
-        <div class="nav-text"><a class="nav-links exp" href="#exp">Experience</a></div>
-        <div class="nav-text"><a class="nav-links" href="#contact">Contact</a></div>
+          
+          <div class="nav-text"><a class="nav-links" href="#about">About</a></div>
+          <div class="nav-text"><a class="nav-links exp" href="#exp">Experience</a></div>
+          <div class="nav-text"><a class="nav-links" href="#contact">Contact</a></div>
+
       </nav>
 
-      <div class="block" id="start"></div>
+      <nav class="nav2">
 
-      <div class="block" id="about">
+        <ul class="navi">
+          <li class="nav-text"> <a href="#about"> About</a> </li>
+          <li class="nav-text"> <a href="#exp">Experience</a> </li>
+          <li class="nav-text"> <a href="#contact">Contact</a> </li>
+      </ul>
+
+      <div class="right">
+
+        <div class="ham">
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <soan class="bar1"></soan>
+        </div>
+    </div>
+        </nav>
+
+      <div class="block hidden-block" id="start">
+        <div class="small">
+          <div class="card-1 popup-card">
+            <div class="exit-btn">
+              <h1>Notice!</h1>
+              <box-icon class="x-icon" type='solid' color='#ffc166' name='x-square'></box-icon>
+              
+            </div>
+            <div class="popup-text">
+              <p>Hey there! here's a little piece of advice, this site will look a whole lot better on a desktop. *wink wink*</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+        <div class="block " id="about">
 
           <h1 class="page-text">About me</h1>
-          <div class="card-1">
+          <div class="card-1 about-card">
             <div class="aboutme-box">
               <div class="about-me">
                 <h1 class="aboutme-head">Hi, im Haseeb!</h1>
-                <p class="aboutme-text">I'm a tech enthusiast who's venturing into the world of web development.
-                </p>
-                
-                  <p class="aboutme-text">
-                    Art has always been my sanctuary—a realm where I can let my creativity run wild. Whether it's through painting, sketching, or exploring digital art.
+
+                <div class="about-text">
+
+                  <p class="aboutme-text">I'm a tech enthusiast who's venturing into the world of web development.
                   </p>
                   
-                  <p class="aboutme-text">
-                    On the professional front, I'm on a mission to become a proficient web developer. I'm committed to sharpening my coding skills, tinkering with various programming languages, and diving into frameworks. My ultimate goal is to craft user-friendly, visually captivating websites that leave a lasting impact.
-                  </p>
-                <div>
+                    <p class="aboutme-text">
+                      Art has always been my sanctuary—a realm where I can let my creativity run wild. Whether it's through painting, sketching, or exploring digital art.
+                    </p>
+                    
+                    <p class="aboutme-text">
+                      On the professional front, I'm on a mission to become a proficient web developer. I'm committed to sharpening my coding skills, tinkering with various programming languages, and diving into frameworks. My ultimate goal is to craft user-friendly, visually captivating websites that leave a lasting impact.
+                    </p>
+                </div>
+                <div class="link-box">
                   <a href="https://github.com/haseeb8143" class="aboutme-link"> <box-icon type='logo' name='github' color='#ffc166'></box-icon>  Github</a>
                   
                   <a href="https://www.linkedin.com/in/haseebiqbaldev/" class="aboutme-link"> <box-icon type='logo' name='linkedin-square' color='#ffc166'></box-icon> LinkedIn</a>
@@ -65,7 +104,7 @@
           <h1 class="page-text">
             Experience
           </h1>
-          <div class="card-1">
+          <div class="card-1 exp-card">
             <div class="exp-box">
               <div class="Coding">
                 <box-icon name='code' color='#ffc166' ></box-icon>
@@ -179,6 +218,10 @@
             <img class="back-arrow" src="/orange-back-arrow.png" alt="Go to start">
           </a>
         </div>
+      
+
+
+
       <!-- </div> -->
     </main>
 

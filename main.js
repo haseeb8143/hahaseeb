@@ -276,41 +276,52 @@ loadObject()
 /////////////// EXTRA JS
 
 
-const navLinks = document.querySelectorAll('.nav-links');
-const tvLinks = document.querySelectorAll('.tv-btn-list')
-const backbutton = document.querySelector('.back-button')
 
+
+const navLinks = document.querySelectorAll('.nav-links');
+const tvLinks = document.querySelectorAll('.tv-btn-list');
+const backbutton = document.querySelector('.back-button');
+let navi;
+
+// navvv
+const hamburger = document.querySelector('.ham');
+navi = document.querySelector('.navi');
+
+hamburger.addEventListener('click', Toggle);
+function Toggle() {
+  console.log('working');
+  navi.classList.toggle('active');
+}
 
 
 // Add a click event listener to each navigation link
 navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the default link behavior
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent the default link behavior
 
-        console.log("wrking")
-        // Get the target section's ID from the link's href attribute
-        const targetId = link.getAttribute('href').substring(1);
+    console.log("working");
+    // Get the target section's ID from the link's href attribute
+    const targetId = link.getAttribute('href').substring(1);
 
-        // Find the target section element by its ID
-        const targetSection = document.getElementById(targetId);
+    // Find the target section element by its ID
+    const targetSection = document.getElementById(targetId);
+    // Scroll smoothly to the target section
+    targetSection.scrollIntoView({ behavior: 'smooth' });
 
-        // Scroll smoothly to the target section
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
+  });
 });
-
 
 tvLinks.forEach(link => {
   link.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent the default link behavior
-      // Get the target section's ID from the link's href attribute
-      const targetId = link.getAttribute('value');
+    e.preventDefault(); // Prevent the default link behavior
+    // Get the target section's ID from the link's href attribute
+    const targetId = link.getAttribute('value');
 
-      // Find the target section element by its ID
-      const targetSection = document.getElementById(targetId);
+    // Find the target section element by its ID
+    const targetSection = document.getElementById(targetId);
 
-      // Scroll smoothly to the target section
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+    // Scroll smoothly to the target section
+    targetSection.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
@@ -319,9 +330,25 @@ backbutton.addEventListener('click', function(e) {
 
   const targetId = backbutton.getAttribute('href').substring(1);
   const targetSection = document.getElementById(targetId);
-  targetSection.scrollIntoView({ behavior: 'smooth' })
-})
+  targetSection.scrollIntoView({ behavior: 'smooth' });
+});
 
+
+
+//popup animation
+
+const popupButton = document.querySelector(".x-icon");
+
+popupButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  gsap.to(".small", { x: "-100vw" , duration: 0.3, ease: "power1.inOut" })
+  gsap.to(".block", { y: "-25rem" , duration: 0.3,delay: 0.3, ease: "power1.inOut" })
+
+  const popup = document.querySelector('.small')
+  popup.classList.add('hidden')
+
+}
+)
 
 
 
