@@ -79,7 +79,8 @@ body, .container {
 }
 /* nav */
 .nav{
-  background-color: rgba(255, 255, 255, .15);  
+  /* background-color: rgba(255, 255, 255, .15);   */
+  background-color: rgba(104, 104, 104, 0.15);  
  backdrop-filter: blur(5px);
  border-right:solid white 0.5px;
   display: flex;
@@ -745,7 +746,8 @@ height: 14rem;
   display: none;
 }
 .nav2{
-  background-color: rgba(255, 255, 255, .15);  
+  /* background-color: rgba(255, 255, 255, .15);   */
+  background-color: rgba(104, 104, 104, 0.15);  
   padding-top: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
